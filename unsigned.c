@@ -14,8 +14,8 @@
 
 void unsigned_int(unsigned int nb)
 {
-    unsigned int	i;
-	unsigned int	n;
+    	unsigned long	i;
+	unsigned long	n;
 
 	i = 1;
 	n = nb;
