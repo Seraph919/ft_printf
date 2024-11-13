@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:15:14 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/13 14:23:34 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/13 23:31:11 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void unsigned_int(unsigned int nb)
 {
-    long	i;
-	long	n;
+    unsigned int	i;
+	unsigned int	n;
 
 	i = 1;
 	n = nb;

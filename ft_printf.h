@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:15:28 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/13 14:22:58 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/13 23:06:46 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
 # include <unistd.h>
 
 int         ft_printf(const char *form, ...);
-size_t	    ft_strlen(const char *str);
 void	    ft_putchar_fd(char c, int fd);
 void	    ft_putstr_fd(char *s, int fd);
 void	    ft_putnbr_fd(int nb, int fd);

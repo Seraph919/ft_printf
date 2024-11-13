@@ -1,18 +1,17 @@
-SRC = ft_printf.c formats.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c p_memory.c unsigned.c upper_hexa.c p_hexa.c upper_hexa.c
+SRC = ft_putstr_fd.c unsigned.c formats.c ft_putchar_fd.c p_hexa.c upper_hexa.c ft_printf.c ft_putnbr_fd.c p_memory.c
+OBJ = $(SRC:.c=.o)
 AR = ar rcs
-NAME = libftprintf.a
-OBJ = ${SRC:.c=.o}
 CFLAGS = -Wall -Wextra -Werror
+NAME = libftprintf.a
 
-all :  $(NAME)
+all : $(NAME)
 
 $(NAME) : $(OBJ)
-  $(AR) $(NAME) $(?)
+	$(AR) $(NAME) $(?)
 clean :
-  rm -f $(OBJ)
+	rm -f $(OBJ)
 fclean : clean
-  rm -f $(NAME)
-
+	rm -f $(NAME)
 re : fclean all
 
 .PHONY : clean fclean
