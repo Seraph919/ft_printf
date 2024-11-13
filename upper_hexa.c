@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   p_memory.c                                         :+:      :+:    :+:   */
+/*   upper_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 17:36:26 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/13 14:06:11 by asoudani         ###   ########.fr       */
+/*   Created: 2024/11/12 16:41:06 by asoudani          #+#    #+#             */
+/*   Updated: 2024/11/13 14:10:43 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void    p_memory(void *ad)
+void upper_hexa(int s)
 {
-    size_t      n;
-    int         i;
-    char        *hex;
-    char        *adress;
+    char        *HEXA;
+    char    *reversed;
+    int             i;
     
-    adress = malloc(18);
-    if (!adress)
-        return ;
-    hex = "0123456789abcdef";
-    n = (size_t) ad;
-    i = 1;
-    ft_putstr_fd("0x", 1);
-    if (n == 0)
-        write(1, "0", 1);
-    while (n > 0)
+    if (s == 0)
     {
-        adress[i] = hex[n%16];
-        n /= 16;
+        ft_putstr_fd("0", 1);
+        return ;
+    }
+    HEXA = "0123456789ABCDEF";
+    reversed = malloc(9);
+    i = 0;
+    if (!reversed)
+        return ;
+    while (s > 0)
+    {
+        reversed[i] = HEXA[s % 16];
+        s /= 16;
         i++;
     }
-    while (--i)
-        ft_putchar_fd(adress[i], 1);
+    while (i)
+        ft_putchar_fd(reversed[--i],1);
 }
