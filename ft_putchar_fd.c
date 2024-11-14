@@ -6,14 +6,16 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/26 18:27:59 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 15:05:55 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:16:20 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd, int *n)
+int	ft_putchar_fd(char c, int fd, int *n)
 {
+	if (write(fd, &c, 1) == -1)
+		return (-1);
 	*n += 1;
-	write(fd, &c, 1);
+	return (1);
 }

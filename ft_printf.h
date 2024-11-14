@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:15:28 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 15:05:46 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:16:14 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include <unistd.h>
 
 int			ft_printf(const char *form, ...);
-void		ft_putchar_fd(char c, int fd, int *n);
-void		ft_putstr_fd(char *s, int fd, int *n);
-void		ft_putnbr_fd(int nb, int fd, int *n);
-void		p_memory(void *ad, int *n);
-const char	*formats(const char *form, va_list args, int *n);
-void		p_hexa(int s, int *n);
-void		upper_hexa(int s, int *n);
-void		unsigned_int(unsigned int nb, int *n);
+int			ft_putchar_fd(char c, int fd, int *n);
+int			ft_putstr_fd(char *s, int fd, int *n);
+int			ft_putnbr_fd(int nb, int fd, int *n);
+int			p_memory(void *ad, int *n);
+const char	*formats(const char *form, va_list args, int *n, int *err);
+int			p_hexa(unsigned int s, int *n);
+int			upper_hexa(unsigned int s, int *n);
+int			unsigned_int(unsigned int nb, int *n);
 
 #endif
