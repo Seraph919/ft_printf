@@ -6,13 +6,13 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:15:14 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 15:06:20 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:16:45 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	unsigned_int(unsigned int nb, int *nbr)
+int	unsigned_int(unsigned int nb, int *nbr)
 {
 	unsigned long	i;
 	unsigned long	n;
@@ -21,8 +21,9 @@ void	unsigned_int(unsigned int nb, int *nbr)
 	n = nb;
 	if (n == 0)
 	{
-		ft_putchar_fd('0', 1, nbr);
-		return ;
+		if (ft_putchar_fd('0', 1, nbr) == -1)
+			return (-1);
+		return (1);
 	}
 	while (i * 10 <= n)
 	{
@@ -30,8 +31,10 @@ void	unsigned_int(unsigned int nb, int *nbr)
 	}
 	while (i > 0)
 	{
-		ft_putchar_fd((n / i) + '0', 1, nbr);
+		if (ft_putchar_fd((n / i) + '0', 1, nbr) == -1)
+			return (-1);
 		n %= i;
 		i /= 10;
 	}
+	return (1);
 }

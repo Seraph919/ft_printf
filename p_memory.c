@@ -6,13 +6,13 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 17:36:26 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 16:04:40 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/14 21:39:59 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	splitting_f(char *adress, char *hex, size_t n, int *nb)
+static int	splitting_f(char *adress, char *hex, size_t n, int *nb)
 {
 	int	i;
 
@@ -24,29 +24,39 @@ static void	splitting_f(char *adress, char *hex, size_t n, int *nb)
 		i++;
 	}
 	while (--i)
-		ft_putchar_fd(adress[i], 1, nb);
+		if (ft_putchar_fd(adress[i], 1, nb) == -1)
+			return (-1);
+	return (1);
 }
 
-void	p_memory(void *ad, int *nb)
+static void	fireforce(char *adress)
+{
+	free(adress);
+}
+
+int	p_memory(void *ad, int *nb)
 {
 	size_t	n;
 	char	*hex;
 	char	*adress;
 
-	adress = malloc(18);
+	adress = malloc(18 * sizeof(char));
 	if (!adress)
-		return ;
+		return (-1);
 	hex = "0123456789abcdef";
 	n = (size_t)ad;
-	ft_putstr_fd("0x", 1, nb);
+	if (ft_putstr_fd("0x", 1, nb) == -1)
+		return (fireforce(adress), -1);
 	if (n == 0)
 	{
-		write(1, "0", 1);
-		*nb += 1;
+		if (ft_putchar_fd('0', 1, nb) == -1)
+			return (fireforce(adress), -1);
 	}
 	else
 	{
-		splitting_f(adress, hex, n, nb);
+		if (splitting_f(adress, hex, n, nb) == -1)
+			return (fireforce(adress), -1);
 	}
 	free(adress);
+	return (1);
 }
