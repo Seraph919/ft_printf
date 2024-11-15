@@ -13,12 +13,3 @@ List of conversions that I implemented in the code:
 | %x | Output an unsigned integer in hexadecimal notation | 15e20a |
 | %X | Output an unsigned integer in hexadecimal notation | 15E20A |
 | %% | Output of the '%' sign | % |  
-
-List of flags used:  
-| Flag | Description |
-|:----:|:-----------:|
-| - | Left-align text with the specified width |
-| (number). | The minimum number of characters to output as a width. If the number has fewer characters, it inserts spaces (or zeros) |
-| .(number) | For integer specifiers (d, i, o, u, x, X), precision determines the minimum number of characters to output. If the value is shorter, zeros are output before the number. The value is not truncated, even if it is longer. An accuracy of 0 means that nothing is output for the value 0. |
-| *. | The width is not specified in the format string, it is passed separately as an argument that must precede the output number |
-| .* | Precision is not specified in the format string, but is passed separately as an argument that must precede the output number |  
