@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 16:23:20 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 18:57:49 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/17 20:43:01 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ const char	*formats(const char *form, va_list args, int *n, int *err)
 		*err = ft_putchar_fd(va_arg(args, int), 1, n);
 	else if (*(form + 1) == '\0')
 		return (form);
-	form += 2;
 	return (form);
 }

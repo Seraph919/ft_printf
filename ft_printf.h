@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:15:28 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 21:16:14 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/17 21:19:23 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ const char	*formats(const char *form, va_list args, int *n, int *err);
 int			p_hexa(unsigned int s, int *n);
 int			upper_hexa(unsigned int s, int *n);
 int			unsigned_int(unsigned int nb, int *n);
+int			check_char(char c);
 
 #endif

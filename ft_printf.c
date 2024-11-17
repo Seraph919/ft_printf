@@ -6,7 +6,7 @@
 /*   By: asoudani <asoudani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 10:14:53 by asoudani          #+#    #+#             */
-/*   Updated: 2024/11/14 21:25:12 by asoudani         ###   ########.fr       */
+/*   Updated: 2024/11/17 21:20:12 by asoudani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,22 @@ static int	while_loop(const char *form, int *count, va_list args, int *err)
 {
 	while (*form)
 	{
-		if (*form == '%')
+		if (*form == '%' && check_char(*(form + 1)) == 1)
 		{
 			form = formats(form, args, count, err);
 			if (*err == -1)
 				return (-1);
+			form++;
 		}
-		else
+		else if (*form != '%')
 		{
 			if (ft_putchar_fd(*form, 1, count) == -1)
 			{
 				va_end(args);
 				return (-1);
 			}
-			form++;
 		}
+		form++;
 	}
 	return (*count);
 }

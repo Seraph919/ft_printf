@@ -1,4 +1,4 @@
-SRC = ft_putstr_fd.c unsigned.c formats.c ft_putchar_fd.c p_hexa.c upper_hexa.c ft_printf.c ft_putnbr_fd.c p_memory.c
+SRC = ft_putstr_fd.c unsigned.c formats.c ft_putchar_fd.c p_hexa.c upper_hexa.c ft_printf.c ft_putnbr_fd.c p_memory.c check_char.c
 OBJ = $(SRC:.c=.o)
 AR = ar rcs
 CFLAGS = -Wall -Wextra -Werror
