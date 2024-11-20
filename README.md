@@ -1,4 +1,10 @@
 # :white_check_mark: ft_printf 
+<h2>Grade</h2>
+
+![printf](https://github.com/user-attachments/assets/40090e95-20dc-4f18-a268-4ad5d82999f5)
+
+</div>
+</br>
 ## Description  
 This project is made in accordance with the requirements of the school of programming 21 (42 school).  
 The main task in this project is to implement individual components of the original `printf` function.  
