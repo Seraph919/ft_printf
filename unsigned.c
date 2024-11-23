@@ -14,8 +14,8 @@
 
 int	unsigned_int(unsigned int nb, int *nbr)
 {
-	unsigned long	i;
-	unsigned long	n;
+	unsigned int	i;
+	unsigned int	n;
 
 	i = 1;
 	n = nb;
